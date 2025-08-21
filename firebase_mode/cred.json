@@ -1,0 +1,13 @@
+{
+    "type": "service_account",
+    "project_id": "ev-carbon-counting-system",
+    "private_key_id": "611acaa631a9a14a52a412e036e653e37b1f66b9",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC3fPV3r1mkHNNV\nHIppRKTuZB9+/j8onZhg2de8J48vvXpDTE4k3owIhKBr+l8YnVLo6hlZEubYRhH0\n7fPQ8LmC1asnre+wkH51xe0R+TaIlerkNzmQ6XypU43oqEIbDqWuQM1Ft4sNOe0+\n3opD7tyxGSm4VospHcSedmCF/gMqdQW/onhykBsjQVeSijDt34VZrJZ642iBmrvc\nC2VHpWlzuTqxG/nbtDztKYkMO2gb1PEE1OIhFn5r2QsRB/UMlflJTuHULWY5eoWZ\nAHDwGCXBYgVuwAiMYohInF05pYA91w/IenGxZ9Boe2ChMBPQ5PbXT9YBk274Ql+G\nehCcEN9TAgMBAAECggEAAIgi+iaea1bVZRD1JniV/XVATCh506ZegIt6jXaJw/bR\niWzDIOPb+8CfTYEjTI+4AGNMfDO0fuBBB+KiDQVmkFIUiXV+txj1vgJ/G0Eltb4J\npunA/+qULROo0Gztjmee7pyeu65xNmFGNf6eV9hDhXpoMQQ7HNsWWl2A7wzuNZ9Z\nCoFNt2UqVCwCobZXG2dbxBFcMn3qfXphKj/td4dT7D+V7Tk9f/TuyFmAIVlKboWu\nI8O7LmnRU1cN3uI7VIXDHC2AAWVaKFzU2boaZaBBp3vEuuZzUGNLLUGLojGt5ePO\ndENht89F2BLmZ4VqsVGAAqkC6pmsOUTWVF66ucWBkQKBgQDwpNxaa3uLq7+9wruJ\n+pP0MDlSLbncGgplNWPFFo+vpbo99hrwpqL0byfmxjzsWDeRDcYjl+uOeibUsnmJ\nSxiR2B/a3bTbK8hRgUA1njzLFtLEEXOHxriVybSrOedrMltBtGEyMJIJRp7FGjLk\n3PSiFlVEGKNv0fq21Hmymhh3+QKBgQDDMmejO8bJkqpayLGE4pqqjZ94NmZObLfS\nw3Bc2MqoeCbM4RhgWz2d50apBeMpvsms58z3qfTavoujykUhmayMvS+pFkDsGDfY\nBQbWi21BGx9uEYYIQ/Ns5mZtcnYxyrhEezFlc4/bNlBQavswmki0luR5u5VafmHy\nKPf8gsWcqwKBgQCw9Xq43yslxXGlmIqSZ3rfaYrtXIS9T0TvsfghGXsl/ifbopui\n9dcFCqx77rEkV6bc+xUGXZQx3K+rX2cyR8/Uh+q85qY1OZgAH5zZEPjBm5H37qFX\nahGYzJAYDeeYk5o50exbnQ321kCwzpg4Zida/jNLdRbShsXoJo0rgleV+QKBgG85\n6ZQ6G6wAxtG0SnNOLJPC33vAg8tsZ9LRStWdMt2MmY9lNF6znwi7IKhvkmHXNVQx\nQbpePgfnS+qo93uN9aS8qMvQwm3F3wxY0OyvxjGzItW1ZoqPLcaAAx2ae38j5Jwh\nFqSYlQB0ko9AZqHrSEKfONGk8hX+rhEvBx/75F7BAoGAHfmscSBn4FCW5UuFLLuy\nKNTBRzNeMApkGazbRo9wMvjFyW7aZXSYhMmaayS9bQPQI2EvQ1xlQgHphDx4cnBi\notClQk0JloJ60kvepL0RnS9Sb0FuiIljzKLZAismLAU39+sYcSLBkhmD/SMFrugq\n1HpyAHVV99GDDcjZ+0g6GIw=\n-----END PRIVATE KEY-----\n",
+    "client_email": "firebase-adminsdk-p8c6f@ev-carbon-counting-system.iam.gserviceaccount.com",
+    "client_id": "110359580095367566245",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-p8c6f%40ev-carbon-counting-system.iam.gserviceaccount.com",
+    "universe_domain": "googleapis.com"
+  }
