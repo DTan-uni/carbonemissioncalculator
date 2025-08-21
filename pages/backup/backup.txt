@@ -1,0 +1,88 @@
+import streamlit as st
+import pandas as pd
+import os
+import time
+from openpyxl import load_workbook
+
+st.set_page_config(layout="wide", initial_sidebar_state="collapsed", page_title="Charging Details", page_icon="👤")
+
+st.title("Charging Details")
+
+def upload_to_excel(data_frame, file_name='charging_station_details.xlsx', max_attempts=5, delay=1):
+    for attempt in range(max_attempts):
+        try:
+            if os.path.exists(file_name):
+                with pd.ExcelWriter(file_name, mode='a', engine='openpyxl', if_sheet_exists='overlay') as writer:
+                    startrow = writer.sheets['Sheet1'].max_row
+                    data_frame.to_excel(writer, index=False, header=False, startrow=startrow)
+            else:
+                data_frame.to_excel(file_name, index=False)
+            
+            st.success(f"Data successfully appended to {file_name}")
+            return
+        except PermissionError:
+            if attempt < max_attempts - 1:
+                st.warning(f"File is open. Retrying in {delay} seconds... (Attempt {attempt + 1}/{max_attempts})")
+                time.sleep(delay)
+            else:
+                st.error(f"Unable to write to file after {max_attempts} attempts. Please close the Excel file and try again.")
+        except Exception as e:
+            st.error(f"An error occurred while writing to the file: {str(e)}")
+            return
+
+if "user_info" in st.session_state:
+    user_info = st.session_state.user_info.copy()
+    credits = st.session_state.credits
+    emission_reduction = st.session_state.emission_reduction
+    baseline_emit = st.session_state.baseline_emit
+    project_emit = st.session_state.project_emit
+    
+    # Add credits and emissions data to user_info
+    user_info["credits_earned"] = f"{credits:.3f}"
+    user_info["emission_reduction"] = f"{emission_reduction:.6f}"
+    user_info["baseline_emit"] = f"{baseline_emit:.6f}"
+    user_info["project_emit"] = f"{project_emit:.6f}"
+
+    # Convert user_info to DataFrame
+    df = pd.DataFrame([user_info])
+
+    # Reorder and rename columns for Excel
+    excel_columns_order = ["username", "phone_number", "car_model", "car_category", "credits_earned", "emission_reduction", "baseline_emit", "project_emit", "payment_method"]
+    excel_df = pd.DataFrame(columns=excel_columns_order)
+    for col in excel_columns_order:
+        excel_df[col] = df.get(col, '-')
+    excel_df.columns = ["Username", "Phone Number", "Car Model", "Car Category", "Credits Earned", "Emission Reduction", "Baseline Emission", "Project Emission", "Payment Method"]
+
+    # Format car_category
+    excel_df.loc[:, "Car Category"] = excel_df["Car Category"].apply(lambda x: ' '.join(word.capitalize() for word in str(x).split('_')))
+
+    # Save data to Excel file
+    upload_to_excel(excel_df)
+
+    # Reorder and rename columns for Streamlit display (excluding baseline, project, and reduction)
+    display_columns_order = ["username", "phone_number", "car_model", "car_category", "credits_earned", "payment_method"]
+    display_df = pd.DataFrame(columns=display_columns_order)
+    for col in display_columns_order:
+        display_df[col] = df.get(col, '-')
+    display_df.columns = ["Username", "Phone Number", "Car Model", "Car Category", "Credits Earned", "Payment Method"]
+
+    # Format car_category for display
+    display_df.loc[:, "Car Category"] = display_df["Car Category"].apply(lambda x: ' '.join(word.capitalize() for word in str(x).split('_')))
+
+    # Reset index to start from 1 and name it "No."
+    display_df.index = range(1, len(display_df) + 1)
+    display_df.index.name = "No."
+
+    st.subheader("User Information")
+    st.table(display_df)
+    
+    if st.button("Finish and Return to Home"):
+        st.session_state.clear()
+        st.switch_page("mainpage.py")
+else:
+    st.error("No user data found. Please start a new charging session.")
+    if st.button("Return to Charging Process"):
+        st.switch_page("pages/charging_process.py")
+
+st.markdown("---")
+st.markdown("© 2024 EV Charging Station. All rights reserved.")
