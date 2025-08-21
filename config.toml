@@ -1,0 +1,47 @@
+# Car categories and their parameters
+[car_category.minicompact]
+sfc = 73.316327
+sec = 0.209000
+
+[car_category.subcompact]
+sfc = 65.782258
+sec = 0.206667
+
+[car_category.compact]
+sfc = 56.880000
+sec = 0.247500
+
+[car_category.midsize]
+sfc = 58.410714
+sec = 0.206158
+
+[car_category.fullsize]
+sfc = 64.750000
+sec = 0.205190
+
+[car_category.station_wagon]
+sfc = 57.272727
+sec = 0.235200
+
+[car_category.small_suv]
+sfc = 64.740489
+sec = 0.235111
+
+[car_category.standard_suv]
+sfc = 81.595420
+sec = 0.288350
+
+[car_category.pickup_truck]
+sfc = 11.353623
+sec = 0.328833
+
+# Fossil fuel types and their parameters
+[fossil_fuel_type.diesel]
+car_category = ["pickup_truck"]
+ncv = 43000  # in J/g
+ef = 0.0000741
+
+[fossil_fuel_type.gasoline]
+car_category = ["standard_suv", "minicompact", "station_wagon", "compact", "subcompact", "midsize", "fullsize", "small_suv"]
+ncv = 44300  # in J/g
+ef = 0.0000693
