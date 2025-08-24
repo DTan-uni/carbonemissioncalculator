@@ -5,7 +5,7 @@ from uuid import uuid4
 from random import randint
 
 # Fetch the service account key JSON file contents
-cred = credentials.Certificate(r"firebase_mode\cred.json")
+cred = credentials.Certificate(r"firebase_mode/cred.json")
 
 # # Initialize the app with a service account, granting admin privileges
 
